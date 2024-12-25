@@ -1,52 +1,79 @@
-/* styles.css */
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f7fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
 }
 
 h1 {
+    font-size: 2rem;
     color: #333;
+    margin-bottom: 20px;
 }
 
 form {
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-input[type="text"], input[type="number"], input[type="color"] {
+input[type="text"], input[type="number"], input[type="color"], button {
     padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"], input[type="number"] {
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+}
+
+input[type="color"] {
+    width: 50%;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="color"]:focus {
+    border-color: #6c5ce7;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #6c5ce7;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #5c4ec7;
 }
 
-#qr-code-container img {
+button:disabled {
+    background-color: #b8b8b8;
+    cursor: not-allowed;
+}
+
+/* QR Code Section */
+#qr-code-container {
     margin-top: 20px;
 }
 
@@ -55,15 +82,47 @@ button:hover {
 }
 
 #qr-actions button {
-    background-color: #28a745;
+    background-color: #2d3436;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    margin: 5px;
+    margin: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 #qr-actions button:hover {
-    background-color: #218838;
+    background-color: #636e72;
+}
+
+#qr-actions button:disabled {
+    background-color: #b8b8b8;
+    cursor: not-allowed;
+}
+
+#qr-actions button:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 0.9rem;
+    }
 }
