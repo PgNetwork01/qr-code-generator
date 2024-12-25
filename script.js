@@ -23,7 +23,6 @@ document.getElementById('qr-form').addEventListener('submit', function (e) {
         height: size,
         colorDark: fgColor,
         colorLight: bgColor,
-        correctLevel: QRCode.CorrectLevel.L, // Error correction level
     });
 
     // Enable Copy and Download buttons
