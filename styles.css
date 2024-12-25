@@ -20,22 +20,24 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     border-radius: 10px;
-    width: 80%; /* Adjusted width to 80% for full screen usage */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    width: 80%; /* Use 80% width of the screen */
     max-width: 1200px; /* Optional: Max width for larger screens */
-    text-align: center;
     margin: 0 10px; /* Allow some margin for responsiveness */
 }
 
 h1 {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
 }
 
 input[type="text"], input[type="number"], input[type="color"], button {
@@ -76,10 +78,16 @@ button:disabled {
 
 /* QR Code Section */
 #qr-code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
 }
 
 #qr-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
     margin-top: 20px;
 }
 
@@ -90,9 +98,8 @@ button:disabled {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin: 10px 0;
-    width: 100%;
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 #qr-actions button:hover {
@@ -131,6 +138,10 @@ button:disabled {
     input[type="color"] {
         width: 50%;
     }
+
+    #qr-actions {
+        grid-template-columns: 1fr; /* Stack buttons vertically on smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -150,5 +161,9 @@ button:disabled {
 
     input[type="text"], input[type="number"] {
         font-size: 0.9rem;
+    }
+
+    input[type="color"] {
+        width: 50%;
     }
 }
