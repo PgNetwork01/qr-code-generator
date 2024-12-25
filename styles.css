@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -20,12 +20,14 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     border-radius: 10px;
-    width: 400px;
+    width: 80%; /* Adjusted width to 80% for full screen usage */
+    max-width: 1200px; /* Optional: Max width for larger screens */
     text-align: center;
+    margin: 0 10px; /* Allow some margin for responsiveness */
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
 }
@@ -37,8 +39,8 @@ form {
 }
 
 input[type="text"], input[type="number"], input[type="color"], button {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 12px;
+    font-size: 1.1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: border-color 0.3s ease;
@@ -49,7 +51,7 @@ input[type="text"], input[type="number"] {
 }
 
 input[type="color"] {
-    width: 50%;
+    width: 60%;
 }
 
 input[type="text"]:focus, input[type="number"]:focus, input[type="color"]:focus {
@@ -84,11 +86,11 @@ button:disabled {
 #qr-actions button {
     background-color: #2d3436;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin: 10px;
+    margin: 10px 0;
     width: 100%;
     transition: background-color 0.3s ease;
 }
@@ -107,10 +109,34 @@ button:disabled {
 }
 
 /* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Use 95% width for smaller screens */
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 1rem;
+    }
+
+    input[type="color"] {
+        width: 50%;
+    }
+}
+
 @media (max-width: 480px) {
     .container {
-        width: 90%;
-        padding: 20px;
+        width: 100%; /* Use full width for very small screens */
+        padding: 15px;
     }
 
     h1 {
